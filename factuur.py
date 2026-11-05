@@ -3,11 +3,10 @@ def bereken_btw(bedrag):
     return bedrag * 0.21
 
 # NIEUW: vaste klanten van Glans & Co (in kleine letters)
-vaste_klanten = ["bakkerij jansen", "tandartspraktijk smile", "kantoor van dijk"]
-
+vaste_klanten = ["bakkerij jansen", "tandartspraktijk smile", "kantoor van dijk", "sportschool fitlab"]
 # Gegevens van de klus vragen
 naam = input("Klantnaam: ")
-print(f"Hallo {naam}")
+print(f"Factuur voor {naam}")
 uren = float(input("Aantal uren: "))
 dag = input("Werkdag of weekend? ").lower()
 
@@ -21,7 +20,7 @@ else:
 if uren >= 4:
     voorrijkosten = 0.00
 else:
-    voorrijkosten = 15.00
+    voorrijkosten = 17.50
 
 # Bedragen berekenen
 urenbedrag = uren * tarief
