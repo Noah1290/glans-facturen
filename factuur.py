@@ -13,14 +13,19 @@ if dag == "weekend":
     tarief = 40.00
 else:
     tarief = 32.50
-
+# Voorrijkosten: gratis vanaf 4 uur
+if uren >= 4:
+    voorrijkosten = 0.00
+else:
+    voorrijkosten = 15.00
 # Bedragen berekenen
-subtotaal = uren * tarief
+subtotaal = uren * tarief + voorrijkosten
 btw = bereken_btw(subtotaal)
 totaal = subtotaal + btw
 
 # Factuur tonen
 print(f"Tarief: €{tarief:.2f} per uur")
+print(f"Voorrijkosten: €{voorrijkosten:.2f}")
 print(f"Subtotaal: €{subtotaal:.2f}")
 print(f"Btw: €{btw:.2f}")
 print(f"Totaal: €{totaal:.2f}")
